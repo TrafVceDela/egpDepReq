@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>متوقع ألعاب الذكاء الاصطناعي –– مصر</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .console-box {
+        font-family: monospace;
+        background-color: #1a1a1a;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 20px #00ff88;
+        color: #00ff88;
+        height: 250px;
+        overflow-y: auto;
+      }
+      .loading-screen {
+        font-family: monospace;
+        background: #000;
+        color: #00ff88;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
+        z-index: 50;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+      .hidden-screen {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-white font-sans">
+    <div id="loading" class="loading-screen">
+      <p>جار التحميل... الرجاء الانتظار أثناء إعداد تجربتك.</p>
+    </div>
+
+    <div id="mainContent" class="hidden-screen">
+      <header class="w-full bg-gray-800 p-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold text-green-400">
+          توقعات الذكاء الاصطناعي من 1xBet
+        </h1>
+        <nav class="space-x-4">
+          <a href="#how" class="hover:text-green-400">كيف يعمل</a>
+          <a href="#games" class="hover:text-green-400">الألعاب</a>
+          <a href="#start" class="hover:text-green-400">ابدأ الآن</a>
+        </nav>
+      </header>
+
+      <section
+        class="min-h-screen flex flex-col items-center justify-center px-4 text-center"
+      >
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">
+          اربح أموالًا حقيقية مع توقعات ألعاب الذكاء الاصطناعي
+        </h2>
+        <p class="max-w-xl mb-8 text-gray-300">
+          انضم إلى آلاف اللاعبين الجزائريين الذين يستخدمون تقنيتنا الذكية للفوز
+          في أشهر الألعاب. دقة إشارات تصل إلى 96%، تنبؤات في الوقت الفعلي،
+          وسحوبات سريعة!
+        </p>
+
+        <button
+          id="startButton"
+          class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl text-lg transition"
+        >
+          ابدأ الربح الآن
+        </button>
+
+        <!-- Input Section -->
+        <div id="idInputSection" class="hidden mt-6 max-w-sm w-full">
+          <input
+            id="betIdInput"
+            type="text"
+            inputmode="numeric"
+            pattern="\d*"
+            placeholder="معرف 1xBet الخاص بك"
+            class="w-full p-3 rounded-lg border border-gray-600 bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-green-400"
+          />
+          <button
+            id="submitIdBtn"
+            class="mt-4 w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg"
+          >
+            إرسال المعرف
+          </button>
+          <p id="inputError" class="hidden mt-2 text-red-500 text-sm">
+            الرجاء إدخال معرف 1xBet رقمي صالح.
+          </p>
+        </div>
+
+        <!-- Error Message -->
+        <div
+          id="errorBox"
+          class="hidden bg-red-600 p-6 rounded-xl max-w-md mx-auto mt-6"
+        >
+          <h2 class="text-xl font-bold mb-2">⚠️ لم يتم العثور على إيداع</h2>
+          <p class="mb-4">
+            يبدو أنك لم تقم بإيداع الأموال بعد. يرجى إجراء إيداع 300 EGP في حساب
+            1xBet الخاص بك لفتح الوصول إلى التوقعات.
+          </p>
+        </div>
+      </section>
+
+      <section class="bg-gray-800 py-12 px-6 text-center">
+        <h3 class="text-2xl font-bold text-green-400 mb-6">
+          أكبر الرابحين اليوم (EGP)
+        </h3>
+        <div
+          class="grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto text-sm text-green-300"
+        >
+          <p>👤 معرف المستخدم: 1218473422 – 275,328 EGP</p>
+          <p>👤 معرف المستخدم: 9912384741 – 221,900 EGP</p>
+          <p>👤 معرف المستخدم: 3099234822 – 184,120 EGP</p>
+          <p>👤 معرف المستخدم: 1187339121 – 150,000 EGP</p>
+          <p>👤 معرف المستخدم: 4412900113 – 132,850 EGP</p>
+          <p>👤 معرف المستخدم: 8283721091 – 128,440 EGP</p>
+          <p>👤 معرف المستخدم: 7751937742 – 100,705 EGP</p>
+          <p>👤 معرف المستخدم: 5554921811 – 98,330 EGP</p>
+          <p>👤 معرف المستخدم: 1983238742 – 85,000 EGP</p>
+          <p>👤 معرف المستخدم: 3377749301 – 79,210 EGP</p>
+        </div>
+      </section>
+
+      <section id="games" class="bg-gray-800 py-12 px-6 text-center">
+        <h3 class="text-2xl font-bold text-green-400 mb-6">الألعاب المدعومة</h3>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+            <h4 class="text-xl font-bold mb-2">🎮 Aviator</h4>
+            <p class="text-gray-300">
+              توقع متى تسحب أموالك قبل أن يطير الطائرة! يكتشف الذكاء الاصطناعي
+              لدينا اتجاهات الإقلاع في الوقت الفعلي.
+            </p>
+          </div>
+          <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+            <h4 class="text-xl font-bold mb-2">💣 Mines</h4>
+            <p class="text-gray-300">
+              تجنب القنابل، واحصد الأرباح. يجد نظامنا مسارات منخفضة المخاطر
+              لأقصى ربح.
+            </p>
+          </div>
+          <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+            <h4 class="text-xl font-bold mb-2">🥅 Penalty</h4>
+            <p class="text-gray-300">
+              اعرف أين تسدد أو تغوص. تغلب على حارس المرمى مع توقعات تعتمد على
+              البيانات.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" class="bg-gray-900 py-12 px-6 text-center">
+        <h3 class="text-2xl font-bold text-green-400 mb-6">كيف يعمل</h3>
+        <div class="max-w-3xl mx-auto space-y-4 text-gray-300">
+          <p>
+            📡 يفحص الذكاء الاصطناعي لدينا بيانات اللعبة الحية والنتائج السابقة
+            على مدار الساعة.
+          </p>
+          <p>💡 يحدد الأنماط التي تؤدي إلى انتصارات متسقة.</p>
+          <p>
+            📲 تحصل على توقعات في الوقت الفعلي يمكنك الوثوق بها - مباشرة إلى
+            جهازك.
+          </p>
+        </div>
+      </section>
+
+      <section class="bg-black py-12 px-6 text-center">
+        <h3 class="text-xl font-bold text-green-400 mb-4">
+          [ سجل وحدة التحكم ]
+        </h3>
+        <div class="console-box max-w-3xl mx-auto text-left" id="console">
+          <p>[INFO] خدمة التوقع نشطة ✅</p>
+        </div>
+      </section>
+
+      <footer class="text-center text-gray-500 text-sm py-6">
+        © 2025 متوقع الذكاء الاصطناعي. غير تابع لـ 1xBet. استخدم بمسؤولية.
+      </footer>
+    </div>
+
+    <script>
+      setTimeout(() => {
+        document.getElementById("loading").classList.add("hidden-screen");
+        document
+          .getElementById("mainContent")
+          .classList.remove("hidden-screen");
+      }, 3000);
+
+      const startButton = document.getElementById("startButton");
+      const idInputSection = document.getElementById("idInputSection");
+      const submitIdBtn = document.getElementById("submitIdBtn");
+      const betIdInput = document.getElementById("betIdInput");
+      const inputError = document.getElementById("inputError");
+      const errorBox = document.getElementById("errorBox");
+
+      startButton.addEventListener("click", () => {
+        startButton.classList.add("hidden");
+        idInputSection.classList.remove("hidden");
+      });
+
+      submitIdBtn.addEventListener("click", () => {
+        const value = betIdInput.value.trim();
+        const isValid = /^\d+$/.test(value);
+
+        if (!isValid || value.length < 6) {
+          inputError.classList.remove("hidden");
+        } else {
+          inputError.classList.add("hidden");
+          errorBox.classList.remove("hidden");
+        }
+      });
+    </script>
+  </body>
+</html>
